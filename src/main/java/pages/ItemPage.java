@@ -8,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class ItemPage extends AbstractPage {
 
     @FindBy(xpath = "//*[@class='_9a071_1Ux3M _9a071_3nB-- _9a071_1R3g4 _9a071_1S3No']")
-    private WebElement titleOfElement;
+    private WebElement titleOfItem;
 
-    @FindBy(xpath = "//div[@aria-label='cena 7 099 zł 00 groszy']")
+    @FindBy(xpath = "//div[@class='_1svub _lf05o _9a071_2MEB_']")
     private WebElement priceOfItem;
 
     @FindBy(xpath = "//button[@id='add-to-cart-button']")
@@ -25,12 +25,12 @@ public class ItemPage extends AbstractPage {
     }
 
     public String getTitleOfProduct() {
-        waitForVisability(titleOfElement);
-        return titleOfElement.getText();
+        waitForVisibility(titleOfItem);
+        return titleOfItem.getText();
     }
 
     public String getPriceOfProduct() {
-        waitForVisability(priceOfItem);
+        waitForVisibility(priceOfItem);
         return priceOfItem.getText();
     }
 
@@ -40,7 +40,7 @@ public class ItemPage extends AbstractPage {
     }
 
     public CartPage goToCart() {
-        waitForVisability(goToCartButton);
+        waitForVisibility(goToCartButton);
         goToCartButton.click();
         return new CartPage(driver);
     }

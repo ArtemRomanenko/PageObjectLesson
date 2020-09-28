@@ -25,7 +25,7 @@ public class HomePage extends AbstractPage {
     }
 
     public HomePage closeRODOBanner() {
-        waitForVisability(closeRODOBanner);
+        waitForVisibility(closeRODOBanner);
         closeRODOBanner.click();
         return this;
     }

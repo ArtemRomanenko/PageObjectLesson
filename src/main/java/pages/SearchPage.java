@@ -16,7 +16,7 @@ public class SearchPage extends AbstractPage {
     }
 
     public ItemPage clickFirstNonPromotedItem() {
-        waitForVisability(searchResult.get(2));
+        waitForVisibility(searchResult.get(2));
         searchResult.get(2).click();
         return new ItemPage(driver);
     }

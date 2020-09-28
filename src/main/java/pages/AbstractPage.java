@@ -14,9 +14,11 @@ public class AbstractPage {
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        driver.manage().window().maximize();
     }
 
-    public void waitForVisability(WebElement element) {
-        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIME).until(ExpectedConditions.visibilityOf(element));
+    public void waitForVisibility(WebElement element) {
+        new WebDriverWait(driver, WAIT_FOR_ELEMENT_TIME)
+                .until(ExpectedConditions.elementToBeClickable(element));
     }
 }

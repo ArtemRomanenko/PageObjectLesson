@@ -16,7 +16,7 @@ public class CartPage extends AbstractPage {
     }
 
     public Boolean cartIsNotEmpty() {
-        waitForVisability(itemsInTheCart.get(0));
+        waitForVisibility(itemsInTheCart.get(0));
         return itemsInTheCart.size() == 1;
     }
 
