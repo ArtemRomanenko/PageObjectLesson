@@ -12,7 +12,7 @@ public class AllegroCheckTheCartTest extends AbstractTest {
         CartPage cartPage = new HomePage(driver)
                 .getPage()
                 .closeRODOBanner()
-                .putSearchQuery("MacBook Pro 2020")
+                .putSearchQuery(SEARCH_QUERY)
                 .clickSearchButton()
                 .clickFirstNonPromotedItem()
                 .addProductToTheCart()

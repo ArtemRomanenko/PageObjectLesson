@@ -12,10 +12,10 @@ public class AllegroItemPriceTest extends AbstractTest {
         ItemPage itemPage = new HomePage(driver)
                 .getPage()
                 .closeRODOBanner()
-                .putSearchQuery("MacBook Pro 2020")
+                .putSearchQuery(SEARCH_QUERY)
                 .clickSearchButton()
                 .clickFirstNonPromotedItem();
         String actualPrice = itemPage.getPriceOfProduct();
-        Assert.assertEquals(actualPrice, "7 099,00 zł");
+        Assert.assertEquals(actualPrice, "7 199,00 zł");
     }
 }
