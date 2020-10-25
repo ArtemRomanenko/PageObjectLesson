@@ -21,7 +21,7 @@ public class HomePage extends AbstractPage {
     }
 
     public HomePage getPage() {
-        driver.get("https://allegro.pl/");
+        driver.get(BASE_URL);
         return this;
     }
 

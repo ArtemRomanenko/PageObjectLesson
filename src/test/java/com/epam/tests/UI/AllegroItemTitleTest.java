@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ItemPage;
+import service.TestDataReader;
 
 public class AllegroItemTitleTest extends AbstractTest {
 
