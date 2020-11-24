@@ -1,5 +1,6 @@
 package pages;
 
+import driver.DriverSingleton;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,8 +19,8 @@ public class AbstractPage {
     protected JavascriptExecutor jsExecutor;
     protected String BASE_URL = TestDataReader.getTestData("base.url");
 
-    public AbstractPage(WebDriver driver) {
-        this.driver = driver;
+    public AbstractPage() {
+        this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
         driver.manage().window().maximize();
         actions = new Actions(driver);

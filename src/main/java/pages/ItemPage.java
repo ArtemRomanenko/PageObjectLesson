@@ -1,7 +1,6 @@
 package pages;
 
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,11 +17,6 @@ public class ItemPage extends AbstractPage {
 
     @FindBy(xpath = "//*[contains(text(),'przejdź do koszyka')]")
     private WebElement goToCartButton;
-
-
-    public ItemPage(WebDriver driver) {
-        super(driver);
-    }
 
     public String getTitleOfProduct() {
         waitForVisibility(titleOfItem);
@@ -42,6 +36,6 @@ public class ItemPage extends AbstractPage {
     public CartPage goToCart() {
         waitForVisibility(goToCartButton);
         goToCartButton.click();
-        return new CartPage(driver);
+        return new CartPage();
     }
 }
