@@ -12,7 +12,7 @@ public class AllegroItemTitleTest extends AbstractTest {
         ItemPage itemPage = new HomePage(driver)
                 .getPage()
                 .closeRODOBanner()
-                .putSearchQuery("MacBook Pro 2020")
+                .putSearchQuery(SEARCH_QUERY)
                 .clickSearchButton()
                 .clickFirstNonPromotedItem();
         String actualTitle = itemPage.getTitleOfProduct();
