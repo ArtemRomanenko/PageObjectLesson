@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,10 +9,6 @@ public class CartPage extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='_1yyhi _sizcr']")
     List<WebElement> itemsInTheCart;
-
-    public CartPage(WebDriver driver) {
-        super(driver);
-    }
 
     public Boolean cartIsNotEmpty() {
         waitForVisibility(itemsInTheCart.get(0));

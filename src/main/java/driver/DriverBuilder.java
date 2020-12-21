@@ -2,23 +2,16 @@ package driver;
 
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.opera.OperaOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import service.TestDataReader;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+public class DriverBuilder {
 
-public class DriverManager {
-    private static String GRID_HUB = TestDataReader.getTestData("grid.hub");
-    private static WebDriver driver;
-
-    private DriverManager(){}
+    private DriverBuilder() {
+    }
 
     public static MutableCapabilities getCapability(String browser) {
         MutableCapabilities mutableCapabilities;
@@ -51,22 +44,4 @@ public class DriverManager {
         capabilities.addArguments("start-maximized");
         return capabilities;
     }
-
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            try {
-                driver = new RemoteWebDriver(new URL(GRID_HUB), DriverManager
-                        .getCapability(System.getProperty("browser")));
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        }
-        return driver;
-    }
-
-    public static void closeDriver(){
-        driver.quit();
-        driver = null;
-    }
 }
-

@@ -4,13 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.ItemPage;
-import service.TestDataReader;
 
 public class AllegroItemTitleTest extends AbstractTest {
 
     @Test
     public void checkItemTitle() {
-        ItemPage itemPage = new HomePage(driver)
+        ItemPage itemPage = new HomePage()
                 .getPage()
                 .closeRODOBanner()
                 .putSearchQuery(SEARCH_QUERY)

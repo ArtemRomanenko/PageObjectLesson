@@ -9,7 +9,7 @@ public class AllegroItemPriceTest extends AbstractTest {
 
     @Test
     public void checkItemPrice() {
-        ItemPage itemPage = new HomePage(driver)
+        ItemPage itemPage = new HomePage()
                 .getPage()
                 .closeRODOBanner()
                 .putSearchQuery(SEARCH_QUERY)

@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,10 +14,6 @@ public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//*[@alt = 'zamknij']")
     private WebElement closeRODOButton;
-
-    public HomePage(WebDriver driver) {
-        super(driver);
-    }
 
     public HomePage getPage() {
         driver.get(BASE_URL);
@@ -38,6 +33,6 @@ public class HomePage extends AbstractPage {
 
     public SearchPage clickSearchButton() {
         keyboardAction(Keys.ENTER);
-        return new SearchPage(driver);
+        return new SearchPage();
     }
 }
