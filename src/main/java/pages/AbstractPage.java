@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import service.TestDataReader;
 
 public class AbstractPage {
 
@@ -15,6 +16,7 @@ public class AbstractPage {
     protected int WAIT_FOR_ELEMENT_TIME = 10;
     protected Actions actions;
     protected JavascriptExecutor jsExecutor;
+    protected String BASE_URL = TestDataReader.getTestData("base.url");
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
