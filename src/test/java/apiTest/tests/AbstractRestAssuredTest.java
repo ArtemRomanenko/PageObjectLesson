@@ -9,6 +9,6 @@ public class AbstractRestAssuredTest {
 
     @BeforeTest
     public void initTest() {
-        RestAssured.baseURI = "http://jsonplaceholder.typicode.com";
+        RestAssured.baseURI = "http://jsonplaceholder.typicode.com" ;
     }
 }
