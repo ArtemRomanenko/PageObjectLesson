@@ -1,13 +1,12 @@
 package pages;
 
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ItemPage extends AbstractPage {
 
-    @FindBy(xpath = "//*[@class='_9a071_1Ux3M _9a071_3nB-- _9a071_1R3g4 _9a071_1S3No']")
+    @FindBy(xpath = "//h1[1]")
     private WebElement titleOfItem;
 
     @FindBy(xpath = "//div[@class='_1svub _lf05o _9a071_2MEB_']")
@@ -16,17 +15,12 @@ public class ItemPage extends AbstractPage {
     @FindBy(xpath = "//button[@id='add-to-cart-button']")
     private WebElement addToCartButton;
 
-    @FindBy(xpath = "//*[@class = '_13q9y _8tsq7 munh_56_s']")
+    @FindBy(xpath = "//*[contains(text(),'przejdź do koszyka')]")
     private WebElement goToCartButton;
-
-
-    public ItemPage(WebDriver driver) {
-        super(driver);
-    }
 
     public String getTitleOfProduct() {
         waitForVisibility(titleOfItem);
-        return titleOfItem.getText();
+        return jsGetValue(titleOfItem);
     }
 
     public String getPriceOfProduct() {
@@ -42,6 +36,6 @@ public class ItemPage extends AbstractPage {
     public CartPage goToCart() {
         waitForVisibility(goToCartButton);
         goToCartButton.click();
-        return new CartPage(driver);
+        return new CartPage();
     }
 }

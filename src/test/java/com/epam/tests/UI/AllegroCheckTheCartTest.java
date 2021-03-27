@@ -9,10 +9,10 @@ public class AllegroCheckTheCartTest extends AbstractTest {
 
     @Test
     public void CheckCart() {
-        CartPage cartPage = new HomePage(driver)
+        CartPage cartPage = new HomePage()
                 .getPage()
                 .closeRODOBanner()
-                .putSearchQuery("MacBook Pro 2020")
+                .putSearchQuery(SEARCH_QUERY)
                 .clickSearchButton()
                 .clickFirstNonPromotedItem()
                 .addProductToTheCart()

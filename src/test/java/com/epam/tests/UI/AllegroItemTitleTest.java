@@ -9,10 +9,10 @@ public class AllegroItemTitleTest extends AbstractTest {
 
     @Test
     public void checkItemTitle() {
-        ItemPage itemPage = new HomePage(driver)
+        ItemPage itemPage = new HomePage()
                 .getPage()
                 .closeRODOBanner()
-                .putSearchQuery("MacBook Pro 2020")
+                .putSearchQuery(SEARCH_QUERY)
                 .clickSearchButton()
                 .clickFirstNonPromotedItem();
         String actualTitle = itemPage.getTitleOfProduct();

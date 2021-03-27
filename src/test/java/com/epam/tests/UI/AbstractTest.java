@@ -1,24 +1,20 @@
 package com.epam.tests.UI;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import service.TestDataReader;
+import testListener.TestListener;
 
-
+@Listeners({TestListener.class})
 public class AbstractTest {
 
     protected WebDriver driver;
-
-    @BeforeMethod
-    public void startDriver() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-    }
+    protected String SEARCH_QUERY = TestDataReader.getTestData("search.query");
 
     @AfterMethod
     public void closeBrowser() {
-        driver.quit();
+        DriverSingleton.closeDriver();
     }
 }
